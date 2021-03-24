@@ -34,7 +34,7 @@ If you want to set up a blog using this repo (or if you're looking for other gat
 
 I'm too lazy to explain a step-by-step process, just jump into the article and you'll get a full ~~tutorial~~ guide on what I did and why.
 
-Ah, all the keys (so far just Algolia and Google Analytics) - live in the frontend/**.env** file.
+Ah, all the keys (so far just Algolia and Google Analytics) - live in the frontend/**.env** file (copy .env.SAMPLE to .env and replace the values).
 
 ## Credits / Based on:
 
