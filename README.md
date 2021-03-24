@@ -11,6 +11,8 @@ This is a decoupled setup with Drupal 8 CMS and Gatsby frontend.
 - Q: *Can I have more details on how you did it and why?*
 - A: Sure, I wrote 2 blog-posts: [why](https://nikro.me/articles/professional/drupal-7-drupal-8-gatsbyjs/) and [how](https://nikro.me/).
 
+![Small Preview](https://raw.githubusercontent.com/Nikro/flexible-gatsby-d8-blog/main/frontend/static/preview.png)
+
 ## Features
 
 - **Drupal 8** based content editing - I dumped my configs in the repo but you can ignore those and provide your own structure;
