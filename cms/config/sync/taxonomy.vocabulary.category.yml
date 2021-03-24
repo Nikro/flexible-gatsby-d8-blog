@@ -1,0 +1,8 @@
+uuid: ef40ca9c-225e-4208-bf65-88b31a24d52f
+langcode: en
+status: true
+dependencies: {  }
+name: Category
+vid: category
+description: 'A simple category.'
+weight: 0

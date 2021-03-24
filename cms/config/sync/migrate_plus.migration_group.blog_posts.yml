@@ -1,0 +1,10 @@
+uuid: 4c7faff2-29b4-47f5-add8-df87e7841294
+langcode: en
+status: true
+dependencies: {  }
+id: blog_posts
+label: blog_posts
+description: ''
+source_type: null
+module: null
+shared_configuration: null

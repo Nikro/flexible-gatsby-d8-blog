@@ -1,0 +1,182 @@
+{
+    "name": "nikro/flexible-gatsby-d8-blog",
+    "description": "Template for Gatsby (v2.x) and Drupal 8 - for blog (i.e. nikro.me)",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://nikro.me/",
+    "authors": [
+        {
+            "name": "Sergiu Nagailic (Nikro)",
+            "email": "nikro.md@gmail.com"
+        }
+    ],
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        "asset-packagist": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    },
+    "require": {
+        "php": ">=7.3",
+        "composer/installers": "^1.7",
+        "cweagans/composer-patches": "^1.6",
+        "drupal/admin_toolbar": "^2.0",
+        "drupal/adminimal_admin_toolbar": "^1.10",
+        "drupal/adminimal_theme": "^1.5",
+        "drupal/captcha": "^1.1",
+        "drupal/chosen": "^2.8",
+        "drupal/coffee": "^1.0@beta",
+        "drupal/config_filter": "^2.0",
+        "drupal/config_split": "^1.4",
+        "drupal/console": "^1.9",
+        "drupal/core-composer-scaffold": "^8.9",
+        "drupal/core-project-message": "^8.9",
+        "drupal/core-recommended": "^8.9",
+        "drupal/crop": "^2.0",
+        "drupal/ctools": "^3.2",
+        "drupal/default_content": "^1.0@alpha",
+        "drupal/devel_php": "^1.2",
+        "drupal/embed": "^1.0",
+        "drupal/entity_browser": "^2.2",
+        "drupal/entity_clone": "^1.0@beta",
+        "drupal/entity_reference_revisions": "^1.6",
+        "drupal/environment_indicator": "^3.6",
+        "drupal/extlink": "^1.1",
+        "drupal/field_group": "^3.0",
+        "drupal/focal_point": "^1.0",
+        "drupal/gatsby": "^1.0@beta",
+        "drupal/geshifilter": "^1.3",
+        "drupal/honeypot": "^2.0",
+        "drupal/inline_entity_form": "^1.0@RC",
+        "drupal/jsonapi_extras": "^3.14",
+        "drupal/key": "^1.10",
+        "drupal/linkit": "^5.0",
+        "drupal/mailsystem": "^4.1",
+        "drupal/metatag": "^1.10",
+        "drupal/migrate_plus": "^4.2",
+        "drupal/migrate_tools": "^4.5",
+        "drupal/module_filter": "^3.1",
+        "drupal/pathauto": "^1.4",
+        "drupal/recaptcha": "^3.0",
+        "drupal/redirect": "^1.4",
+        "drupal/rules": "^3.0@alpha",
+        "drupal/scheduler": "^1.1",
+        "drupal/smart_trim": "^1.1",
+        "drupal/swiftmailer": "^2.0@beta",
+        "drupal/taxonomy_formatter": "^1.1",
+        "drupal/token": "^1.5",
+        "drupal/video_embed_field": "^2.2",
+        "drush/drush": "^10.2",
+        "npm-asset/chosen-js": "^1.8",
+        "oomphinc/composer-installers-extender": "^1.1",
+        "webmozart/path-util": "^2.3",
+        "wikimedia/composer-merge-plugin": "^1.4",
+        "zaporylie/composer-drupal-optimizations": "^1.1"
+    },
+    "require-dev": {
+        "drupal/core": "^8.9",
+        "drupal/coder": "^8.3",
+        "drupal/devel": "^2.1",
+        "drupal/drupal-extension": "^4.0",
+        "phpunit/phpunit": "^8.5"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "build-assets": [
+            "composer install --optimize-autoloader --no-dev"
+        ],
+        "lint": "find web/modules/custom web/themes/custom -name '*.php' -exec php -l {} \\;",
+        "code-sniff": [
+            "phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor --warning-severity=8 ./web/modules/custom",
+            "phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,scss,js --ignore=node_modules,bower_components,vendor,SUBTHEME,dist,fonts --warning-severity=8 ./web/themes/custom",
+            "phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor --warning-severity=8 ./web/modules/custom",
+            "phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,scss,js --ignore=node_modules,bower_components,vendor,SUBTHEME,dist,fonts --warning-severity=8 ./web/themes/custom"
+        ],
+        "unit-test": "echo 'No unit test step defined.'",
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "post-install-cmd": [
+            "@drupal-scaffold",
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-create-project-cmd": [
+            "@drupal-scaffold",
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            }
+        },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "npm-asset"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ],
+            "web/libraries/chosen": ["npm-asset/chosen-js"]
+        },
+        "drupal-core-project-message": {
+            "include-keys": [
+                "homepage",
+                "support"
+            ],
+            "post-create-project-cmd-message": [
+                "<bg=blue;fg=white>                                                         </>",
+                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
+                "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
+                "<bg=blue;fg=white>                                                         </>",
+                "",
+                "<bg=yellow;fg=black>Next steps</>:",
+                "  * Install the site: https://www.drupal.org/docs/8/install",
+                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
+                "  * Get support: https://www.drupal.org/support",
+                "  * Get involved with the Drupal community:",
+                "      https://www.drupal.org/getting-involved",
+                "  * Remove the plugin that prints this message:",
+                "      composer remove drupal/core-project-message"
+            ]
+        },
+        "enable-patching": true,
+        "patches": { }
+    }
+}

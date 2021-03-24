@@ -1,0 +1,28 @@
+uuid: dc9ef1a8-036e-4af3-9d71-eff070b2d0f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cover
+    - media.type.image
+    - node.type.page
+id: node.page.field_cover
+field_name: field_cover
+entity_type: node
+bundle: page
+label: Cover
+description: 'Use cover as page preview image.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

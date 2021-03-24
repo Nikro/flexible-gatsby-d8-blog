@@ -1,0 +1,26 @@
+uuid: ea1b2ac7-a0b3-4e18-b3f0-585e65f90b17
+langcode: en
+status: true
+dependencies:
+  module:
+    - scheduler
+third_party_settings:
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: Article
+type: article
+description: 'A rich / dynamic paragraph-based page.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

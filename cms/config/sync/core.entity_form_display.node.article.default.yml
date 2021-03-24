@@ -1,0 +1,182 @@
+uuid: dabd033f-c075-45c0-bf18-0141e795c0d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.body
+    - field.field.node.article.field_article_type
+    - field.field.node.article.field_categories
+    - field.field.node.article.field_cover
+    - field.field.node.article.field_media
+    - field.field.node.article.field_related_articles
+    - field.field.node.article.field_related_countries
+    - field.field.node.article.field_subtitle
+    - field.field.node.article.field_tags
+    - node.type.article
+  module:
+    - chosen_field
+    - field_group
+    - media_library
+    - path
+    - scheduler
+    - text
+third_party_settings:
+  field_group:
+    group_tagging:
+      children:
+        - field_article_type
+        - field_tags
+        - field_categories
+        - field_related_countries
+        - field_related_articles
+      parent_name: ''
+      weight: 5
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: 'There are various ways to tag the article.'
+        open: false
+        required_fields: true
+      label: Tagging
+id: node.article.default
+targetEntityType: node
+bundle: article
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 3
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_article_type:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_categories:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  field_cover:
+    type: media_library_widget
+    weight: 2
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_media:
+    type: media_library_widget
+    weight: 4
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_related_articles:
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_related_countries:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  field_subtitle:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_tags:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  path:
+    type: path
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 10
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 14
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  url_redirects:
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,28 @@
+uuid: 6afbcf69-9f38-410a-905e-b8be5e51b6d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cover
+    - media.type.image
+    - node.type.article
+id: node.article.field_cover
+field_name: field_cover
+entity_type: node
+bundle: article
+label: Cover
+description: 'Use this field as the cover / preview of the article.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,26 @@
+uuid: 716f9234-03bc-41e5-a69e-886353b76c22
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: all_terms
+label: 'All Terms'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:vocabulary]/[term:name]'
+selection_criteria:
+  370c4213-0f36-47d8-bacd-18dfe2de6cf0:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      article_type: article_type
+      category: category
+      countries: countries
+      tags: tags
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 370c4213-0f36-47d8-bacd-18dfe2de6cf0
+selection_logic: and
+weight: -5
+relationships: {  }

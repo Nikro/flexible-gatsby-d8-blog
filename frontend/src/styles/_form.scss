@@ -1,0 +1,71 @@
+///
+/// Editorial by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Form */
+form {
+  font-size: 20px;
+
+  textarea,
+  input {
+    padding: 10px;
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid $dark-gray;
+  }
+  button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: $dark-gray;
+    color: $white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 0 none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 30px;
+
+    &:hover {
+      background: $dark-blue;
+    }
+  }
+}
+#search {
+  text-align: left;
+  h4 {
+    margin: 0 5px;
+  }
+  input {
+    font-size: 14px;
+    border-radius: 10px;
+  }
+  .ais-Hits-list {
+    padding-left: 30px;
+  }
+  .ais-Hits-item {
+    h4 {
+      margin-left: 0;
+    }
+    a {
+      font-size: 14px;
+      font-weight: 300;
+      text-decoration: none;
+      color: $dark;
+    }
+    .ais-Highlight-highlighted {
+      background: transparent;
+      font-weight: 600;
+    }
+    .ais-Highlight {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .ais-Highlight-nonHighlighted {
+      font-weight: 100;
+    }
+  }
+}

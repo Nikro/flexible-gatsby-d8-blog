@@ -1,0 +1,19 @@
+uuid: fd741580-0fc5-4d2d-a19e-67f47c027ec5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.article
+id: node.article.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: article
+label: Subtitle
+description: 'Subtitle used below the title.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

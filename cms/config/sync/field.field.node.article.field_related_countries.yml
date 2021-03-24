@@ -1,0 +1,29 @@
+uuid: c4514881-a184-4e91-973a-facfb812b4d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_countries
+    - node.type.article
+    - taxonomy.vocabulary.countries
+id: node.article.field_related_countries
+field_name: field_related_countries
+entity_type: node
+bundle: article
+label: 'Related Countries'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      countries: countries
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

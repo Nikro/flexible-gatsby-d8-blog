@@ -1,0 +1,8 @@
+uuid: 89477f18-0655-4b5a-a599-0834075f2254
+langcode: en
+status: true
+dependencies: {  }
+name: Countries
+vid: countries
+description: 'Collection of countries.'
+weight: 0

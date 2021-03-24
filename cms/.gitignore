@@ -1,0 +1,26 @@
+# Ignore everything by default
+/*
+
+# Don't exclude custom modules and site settings
+# Note how each level has to be included/excluded
+!/config/
+!/etc/
+!/patches/
+!/web/
+!/scripts/
+/web/*
+!/web/libraries/
+!/web/modules/
+!/web/sites/
+/web/modules/*
+/web/sites/*
+!/web/modules/custom
+!/web/themes/custom
+!/web/sites/default/
+/web/sites/default/files/*
+
+# Files to include (don't ignore)
+!.dockerignore
+!.gitignore
+!composer.json
+!composer.lock

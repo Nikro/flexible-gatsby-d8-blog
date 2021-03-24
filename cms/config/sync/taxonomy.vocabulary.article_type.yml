@@ -1,0 +1,8 @@
+uuid: 2591fd59-a586-4365-b10d-2cddc7b0ca7b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Article Type'
+vid: article_type
+description: 'This is like TOP level category.'
+weight: 0
